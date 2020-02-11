@@ -9,6 +9,10 @@ namespace ArtSofteStaff.Models.Data
 {
     public class SampleData
     {
+        /// <summary>
+        /// Добавление в справочник Отделы и Языки программирования
+        /// </summary>
+        /// <param name="serviceProvider"></param>
         public static void Initialize(IServiceProvider serviceProvider)
         {
             using (var context = new WorkContext(
@@ -25,7 +29,8 @@ namespace ArtSofteStaff.Models.Data
                     new Unit { Name = "Digital", Floor = 6 },
                     new Unit { Name = "Abanking", Floor = 6 },
                     new Unit { Name = "Trade-dealer", Floor = 5 },
-                    new Unit { Name = "Profitbase", Floor = 4 }
+                    new Unit { Name = "Profitbase", Floor = 4 },
+                    new Unit { Name = "MarketingHub", Floor = 3 }
                     );
                 context.SaveChanges();
 
@@ -38,7 +43,11 @@ namespace ArtSofteStaff.Models.Data
                     new Language { Name = "C#"  },
                     new Language { Name = "Python" },
                     new Language { Name = "Assembler" },
-                    new Language { Name = "C++",}
+                    new Language { Name = "C++"},
+                    new Language { Name = "Java" },
+                    new Language { Name = "VB.Net" },
+                    new Language { Name = "F#" },
+                    new Language { Name = "Pascal" }
                     );
 
                 context.SaveChanges();
