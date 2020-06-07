@@ -2,7 +2,7 @@
 
 namespace ArtSofteStaff.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class WorkMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -41,7 +41,7 @@ namespace ArtSofteStaff.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FirstName = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
-                    Age = table.Column<int>(nullable: false),
+                    Age = table.Column<long>(nullable: false),
                     Sex = table.Column<string>(nullable: false),
                     UnitID = table.Column<int>(nullable: false),
                     LanguageID = table.Column<int>(nullable: false)

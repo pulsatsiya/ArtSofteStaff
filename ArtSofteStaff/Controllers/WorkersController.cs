@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ArtSofteStaff.Models;
 using ArtSofteStaff.Models.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ArtSofteStaff.Controllers
 {
@@ -14,17 +15,23 @@ namespace ArtSofteStaff.Controllers
     {
         private readonly WorkContext _context;
 
+       
         public WorkersController(WorkContext context)
         {
             _context = context;
         }
-
+       
         // GET: Workers
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             var workContext = _context.Workers.Include(w => w.Language).Include(w => w.Unit);
             return View(await workContext.ToListAsync());
         }
+
+        
+        
+        
 
         // GET: Workers/Add
         public IActionResult Add()
