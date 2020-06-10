@@ -4,12 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using ArtSofteStaff.Models;
 using ArtSofteStaff.Models.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace ArtSofteStaff.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class LanguagesController : ControllerBase
@@ -22,6 +24,10 @@ namespace ArtSofteStaff.Controllers
         }
         // GET api/languages/
 
+
+
+
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Language>>> Get()
         {
@@ -39,7 +45,7 @@ namespace ArtSofteStaff.Controllers
         }
 
    
-
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Language>> Post(Language language)
         {
@@ -53,8 +59,8 @@ namespace ArtSofteStaff.Controllers
             return Ok(language);
         }
 
-     
 
+        [Authorize]
         [HttpPut]
         public async Task<ActionResult<Language>> Put(Language language)
         {
@@ -72,7 +78,7 @@ namespace ArtSofteStaff.Controllers
             return Ok(language);
         }
 
-      
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult<Language>> Delete(int id)
         {

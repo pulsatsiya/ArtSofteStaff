@@ -2,7 +2,7 @@
 
 namespace ArtSofteStaff.Migrations
 {
-    public partial class WorkMigration : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -17,6 +17,21 @@ namespace ArtSofteStaff.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Languages", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Persons",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Login = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: true),
+                    Role = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Persons", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -76,6 +91,9 @@ namespace ArtSofteStaff.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Persons");
+
             migrationBuilder.DropTable(
                 name: "Workers");
 

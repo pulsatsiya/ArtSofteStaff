@@ -13,11 +13,24 @@
     <Compile Remove="Migrations\20200605115442_AddWorkers.Designer.cs" />
     <Compile Remove="Migrations\20200605115627_WorkersMigraton.cs" />
     <Compile Remove="Migrations\20200605115627_WorkersMigraton.Designer.cs" />
+    <Compile Remove="Migrations\20200605120147_WorkMigration.cs" />
+    <Compile Remove="Migrations\20200605120147_WorkMigration.Designer.cs" />
     <Compile Remove="Migrations\20200606113417_PersonContext.cs" />
     <Compile Remove="Migrations\20200606113417_PersonContext.Designer.cs" />
+    <Compile Remove="Migrations\20200607100130_AddPerson.cs" />
+    <Compile Remove="Migrations\20200607100130_AddPerson.Designer.cs" />
+    <Compile Remove="Migrations\20200607100344_AddPerson.cs" />
+    <Compile Remove="Migrations\20200607100344_AddPerson.Designer.cs" />
+    <Compile Remove="Migrations\20200608162225_AddPerson.cs" />
+    <Compile Remove="Migrations\20200608162225_AddPerson.Designer.cs" />
+    <Compile Remove="Migrations\20200608162703_Init.cs" />
+    <Compile Remove="Migrations\20200608162703_Init.Designer.cs" />
+    <Compile Remove="Migrations\20200608164558_Initial.cs" />
+    <Compile Remove="Migrations\20200608164558_Initial.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.4" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.4" />

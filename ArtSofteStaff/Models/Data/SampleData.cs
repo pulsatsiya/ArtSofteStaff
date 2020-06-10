@@ -45,10 +45,18 @@ namespace ArtSofteStaff.Models.Data
                 new Language { Name = "Java" },
                 new Language { Name = "VB.Net" },
                 new Language { Name = "F#" },
-                new Language { Name = "Pascal" },
-                new Language { Name = "Ruby" },
-                new Language { Name = "JavaScript" },
-                new Language { Name = "C" }
+                new Language { Name = "Pascal" }
+                );
+
+            if (context.Persons.Any())
+            {
+                return;
+            }
+            context.Persons.AddRange(
+                new Person { Login = "1234", Password = "1234", Role = "admin"},
+                new Person { Login = "User", Password = "User", Role = "user" }
+               
+
                 );
 
             context.SaveChanges();

@@ -4,12 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using ArtSofteStaff.Models;
 using ArtSofteStaff.Models.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace ArtSofteStaff.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class EmployeesController : ControllerBase
@@ -21,12 +23,21 @@ namespace ArtSofteStaff.Controllers
             db = context;
         }
 
+
+        //[Route("GetLogin")]
+        //public IActionResult GetLogin()
+        //{
+        //    return Ok($"Ваш логин: {User.Identity.Name}");
+        //}
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Worker>>> Get()
         {
             return await db.Workers.ToListAsync();
         }
 
+
+        [Authorize]
         [HttpGet("{id}")]
 
         // GET api/employees/id
@@ -38,7 +49,9 @@ namespace ArtSofteStaff.Controllers
             return new ObjectResult(worker);
         }
         // POST api/employees
-        
+
+
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Worker>> Post(Worker worker)
         {
@@ -53,7 +66,9 @@ namespace ArtSofteStaff.Controllers
         }
 
         // PUT api/employees/
-        
+
+
+        [Authorize]
         [HttpPut]
         public async Task<ActionResult<Worker>> Put(Worker worker)
         {
@@ -72,6 +87,9 @@ namespace ArtSofteStaff.Controllers
         }
 
         // DELETE api/employees/ip
+
+
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult<Worker>> Delete(int id)
         {
